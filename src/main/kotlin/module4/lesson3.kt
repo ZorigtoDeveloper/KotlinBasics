@@ -21,5 +21,5 @@ fun printNumbers(number: Int): Int {
 
 tailrec fun calculateSum(n: Int, currentSum: Int = 0) : Int {
     if (n == 0) return currentSum
-    return  calculateSum(n -1, currentSum + n)
+    return calculateSum(n - 1, currentSum + n)
 }

@@ -1,7 +1,5 @@
 package module4
 
-import kotlin.math.exp
-
 fun main() {
     //println(max(5, 28))
     //println(printIfPositive(10))
@@ -60,3 +58,5 @@ fun getUserAccess(isAuthorized: Boolean, role: String) : String {
         else -> "Common"
     }
 }
+
+
