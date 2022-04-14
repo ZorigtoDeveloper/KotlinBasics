@@ -17,9 +17,33 @@ class Car(val brand: String,val model: String, val color: String = "White") {
     }
 
     var currentSpeed = 0.0
+        private set
+
+    private var fuelCount = 0.0
 
     init {
         println("Second init")
+    }
+
+    fun accelerate(speed: Double) {
+        val needFuel = speed * 0.1
+        if (fuelCount > needFuel) {
+            currentSpeed += speed
+            useFuel(needFuel)
+        } else
+            println("Car has not enough fuel")
+    }
+
+    fun decelerate(speed: Double) {
+//        val finalSpeed = currentSpeed - speed
+//        currentSpeed = if (finalSpeed < 0) 0.0
+//        else finalSpeed
+        currentSpeed = maxOf(0.0, currentSpeed - speed)
+
+    }
+
+    private fun useFuel(fuelCount: Double) {
+        this.fuelCount -= fuelCount
     }
 
     fun move() {
