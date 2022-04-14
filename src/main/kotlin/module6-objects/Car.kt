@@ -2,10 +2,25 @@ package `module6-objects`
 
 import kotlin.random.Random
 
-class Car {
-    val brand = "Audi"
-    val model = "A3"
-    val color = "Red"
+class Car(val brand: String,val model: String, val color: String = "White") {
+
+    constructor(descriptor: Pair<String, String>, color: String) : this(
+        brand = descriptor.first,
+        model = descriptor.second,
+        color = color
+    ) {
+        println("secondary constructor")
+    }
+
+    init {
+        println("Car init")
+    }
+
+    var currentSpeed = 0.0
+
+    init {
+        println("Second init")
+    }
 
     fun move() {
         val distance = Random.nextInt(1, 10)
