@@ -2,7 +2,7 @@ package `module6-objects`
 
 import kotlin.random.Random
 
-class Car(val brand: String,val model: String, val color: String = "White") {
+class Car(val brand: String, val model: String, val color: String = "White") {
 
     constructor(descriptor: Pair<String, String>, color: String) : this(
         brand = descriptor.first,
