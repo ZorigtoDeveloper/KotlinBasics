@@ -1,15 +1,10 @@
 package `module7-oop`
 
-class KotlinDeveloper: Developer {
-
+class JaveDeveloper : Developer {
     constructor(name:String, age: Int) : super(name, age)
     constructor(name: String, age: Int, experience: Int) : super(name, age, experience)
 
     override fun writeCode() {
-
-        println("kt developer writing kt code")
-        super.getCoffeeBreak()
+        println("java developer writing java code")
     }
-
-    override fun getCoffeeBreak() = true
 }

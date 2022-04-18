@@ -1,18 +1,24 @@
 package `module7-oop`
 
+import kotlin.random.Random
+
 open class Developer(
     name: String,
     age: Int,
-    val experience: Int = 2
+    protected val experience: Int = 2
 ): Person(name, age) {
 
-    fun writeCode() = println("programmer writing code")
+    open val paradigm = "OOP"
 
-    fun getLevel() = when (experience) {
+    open fun writeCode() = println("programmer writing code")
+
+    open fun getLevel() = when (experience) {
         0 -> "intern"
         in 1..2 -> "junior"
         in 3..4 -> "middle"
         in 4..5 -> "senior"
         else -> "leading"
     }
+
+    protected open fun getCoffeeBreak() = Random.nextBoolean()
 }
