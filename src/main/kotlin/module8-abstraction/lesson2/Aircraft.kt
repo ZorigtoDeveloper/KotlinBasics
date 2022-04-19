@@ -38,5 +38,20 @@ abstract class Aircraft(maxWeightArg: Int) : Transporter(maxWeightArg) {
         |Number of rows: $rows
         |Number of seats in a rows: $numberOfSeatsInRow
     """.trimMargin()
+
+    override fun move() {
+        println("Aircraft flying")
+    }
+
+    fun getAvailableSeat(): Seat? {
+        val availabSeat = mutableListOf<Seat>()
+        seatScheme.forEachIndexed { rowIndex, row ->
+            row.forEachIndexed { seatIndex, passenger ->
+                if (passenger == null)
+                    availabSeat.add(Seat(rowIndex, 'A' + seatIndex))
+            }
+        }
+        return availabSeat.randomOrNull()
+    }
 }
 
