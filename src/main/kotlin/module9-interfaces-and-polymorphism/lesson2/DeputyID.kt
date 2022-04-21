@@ -1,7 +1,8 @@
 package `module9-interfaces-and-polymorphism`.lesson2
 
 class DeputyID(
-    private val number: String
+    private val number: String,
+    issuedDate: String
 ) : Document {
     override fun getStringIdentifier(): String = number
 
